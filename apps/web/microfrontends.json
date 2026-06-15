@@ -1,8 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/microfrontends.json",
   "applications": {
-    "tools": {},
+    "tools": {
+      "packageName": "@bsns/tools-web"
+    },
     "bsns-qr": {
+      "packageName": "@bsns-qr/web",
       "routing": [
         {
           "paths": ["/qr/:path*"]
