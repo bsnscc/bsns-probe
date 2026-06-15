@@ -1,0 +1,29 @@
+{
+  "name": "@bsns/tools-web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "corepack pnpm --filter @bsns/probe-core build && corepack pnpm --filter @bsns/a11y-core build && corepack pnpm --filter @bsns/probe-report build && next build",
+    "dev": "corepack pnpm --filter @bsns/probe-core build && corepack pnpm --filter @bsns/a11y-core build && corepack pnpm --filter @bsns/probe-report build && next dev",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@bsns/a11y-core": "workspace:*",
+    "@bsns/probe-core": "workspace:*",
+    "@bsns/probe-report": "workspace:*",
+    "next": "^16.2.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.6"
+  }
+}

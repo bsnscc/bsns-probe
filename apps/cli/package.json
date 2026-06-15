@@ -1,0 +1,30 @@
+{
+  "name": "@bsns/probe-cli",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "bsns-probe": "./dist/index.js",
+    "bsns-a11y": "./dist/a11y.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "corepack pnpm --filter @bsns/probe-core build && corepack pnpm --filter @bsns/probe-report build && tsx src/index.ts",
+    "lint": "eslint .",
+    "start": "node dist/index.js",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@bsns/a11y-core": "workspace:*",
+    "@bsns/probe-core": "workspace:*",
+    "@bsns/probe-report": "workspace:*",
+    "commander": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "tsx": "^4.22.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.6"
+  }
+}

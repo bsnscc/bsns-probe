@@ -1,0 +1,38 @@
+{
+  "name": "bsns-probe",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Free, open-source domain health checks for operators.",
+  "license": "MIT",
+  "homepage": "https://tools.bsns.cc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bsnscc/bsns-probe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bsnscc/bsns-probe/issues"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "scripts": {
+    "build": "corepack pnpm -r --if-present build",
+    "dev": "corepack pnpm --filter @bsns/tools-web dev",
+    "lint": "corepack pnpm -r --if-present lint",
+    "screenshots:production": "node scripts/capture-production-screenshots.mjs",
+    "smoke:browser": "playwright test",
+    "smoke:production": "node scripts/smoke-production.mjs",
+    "test": "corepack pnpm -r --if-present test",
+    "typecheck": "corepack pnpm --filter @bsns/probe-core build && corepack pnpm --filter @bsns/probe-report build && corepack pnpm -r --if-present typecheck"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^22.19.0",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.3",
+    "vitest": "^4.1.6"
+  }
+}
