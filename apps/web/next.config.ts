@@ -1,3 +1,4 @@
+import { withMicrofrontends } from "@vercel/microfrontends/next/config";
 import type { NextConfig } from "next";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -67,4 +68,4 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@bsns/probe-core", "@bsns/probe-report"]
 };
 
-export default nextConfig;
+export default withMicrofrontends(nextConfig);
